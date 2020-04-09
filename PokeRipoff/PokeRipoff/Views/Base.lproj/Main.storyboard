@@ -1,8 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eVH-tG-SdK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="4vb-dJ-1AM">
+            <objects>
+                <viewController id="Hfx-KR-SjW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fh3-Zw-CwI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nidorino_front" translatesAutoresizingMaskIntoConstraints="NO" id="E8I-Oc-ooK">
+                                <rect key="frame" x="207" y="88" width="207" height="207"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="E8I-Oc-ooK" secondAttribute="height" multiplier="1:1" id="Klt-Pm-OyV"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gengar_back" translatesAutoresizingMaskIntoConstraints="NO" id="Wr1-6B-YSH">
+                                <rect key="frame" x="0.0" y="295" width="207" height="207"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Wr1-6B-YSH" secondAttribute="height" multiplier="1:1" id="IkT-Js-JtA"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="E8I-Oc-ooK" firstAttribute="trailing" secondItem="VaY-bX-65v" secondAttribute="trailing" id="50R-Fr-CLf"/>
+                            <constraint firstItem="Wr1-6B-YSH" firstAttribute="leading" secondItem="VaY-bX-65v" secondAttribute="leading" id="Chu-FA-Y26"/>
+                            <constraint firstItem="E8I-Oc-ooK" firstAttribute="width" secondItem="Fh3-Zw-CwI" secondAttribute="width" multiplier="0.5" id="Iup-0P-AZh"/>
+                            <constraint firstItem="E8I-Oc-ooK" firstAttribute="top" secondItem="VaY-bX-65v" secondAttribute="top" id="L8P-eC-0sE"/>
+                            <constraint firstItem="Wr1-6B-YSH" firstAttribute="top" secondItem="E8I-Oc-ooK" secondAttribute="bottom" id="Sqn-dI-v6a"/>
+                            <constraint firstItem="Wr1-6B-YSH" firstAttribute="width" secondItem="Fh3-Zw-CwI" secondAttribute="width" multiplier="0.5" id="pgn-W9-hu3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VaY-bX-65v"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dse-R3-IP3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fIs-4k-zoN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="989.85507246376824" y="49.553571428571423"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gsF-m1-1Fs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eVH-tG-SdK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YDQ-5q-wRN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Hfx-KR-SjW" kind="relationship" relationship="rootViewController" id="fau-0s-QEF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rO9-SD-xfu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="79.710144927536234" y="49.553571428571423"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gengar_back" width="96" height="96"/>
+        <image name="nidorino_front" width="96" height="96"/>
+    </resources>
 </document>

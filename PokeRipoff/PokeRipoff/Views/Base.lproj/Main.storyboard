@@ -162,7 +162,7 @@
         <!--Stats-->
         <scene sceneID="Cd6-4T-n96">
             <objects>
-                <viewController id="NH3-X9-y1n" sceneMemberID="viewController">
+                <viewController id="NH3-X9-y1n" customClass="JLAStatsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cr9-RB-4M9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

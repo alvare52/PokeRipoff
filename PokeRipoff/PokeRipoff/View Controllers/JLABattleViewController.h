@@ -10,6 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+// Global variable
+extern NSString *MYGlobalVariable;
+
 @class APIController;
 
 @interface JLABattleViewController : UIViewController

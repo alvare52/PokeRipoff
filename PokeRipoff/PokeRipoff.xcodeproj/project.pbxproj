@@ -16,6 +16,7 @@
 		1B8C83CF2442B35200C0C3E4 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8C83CE2442B35200C0C3E4 /* APIController.swift */; };
 		1B8C83D22442B3A500C0C3E4 /* JLAPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8C83D12442B3A500C0C3E4 /* JLAPokemon.m */; };
 		1B8C83D72442C0BE00C0C3E4 /* JLABattleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8C83D62442C0BE00C0C3E4 /* JLABattleViewController.m */; };
+		1B8C83DE2443CC9A00C0C3E4 /* JLAStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8C83DD2443CC9A00C0C3E4 /* JLAStatsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		1B8C83D12442B3A500C0C3E4 /* JLAPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLAPokemon.m; sourceTree = "<group>"; };
 		1B8C83D52442C0BE00C0C3E4 /* JLABattleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLABattleViewController.h; sourceTree = "<group>"; };
 		1B8C83D62442C0BE00C0C3E4 /* JLABattleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLABattleViewController.m; sourceTree = "<group>"; };
+		1B8C83DC2443CC9A00C0C3E4 /* JLAStatsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLAStatsViewController.h; sourceTree = "<group>"; };
+		1B8C83DD2443CC9A00C0C3E4 /* JLAStatsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLAStatsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 			children = (
 				1B8C83D52442C0BE00C0C3E4 /* JLABattleViewController.h */,
 				1B8C83D62442C0BE00C0C3E4 /* JLABattleViewController.m */,
+				1B8C83DC2443CC9A00C0C3E4 /* JLAStatsViewController.h */,
+				1B8C83DD2443CC9A00C0C3E4 /* JLAStatsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B8C83DE2443CC9A00C0C3E4 /* JLAStatsViewController.m in Sources */,
 				1B8C83D72442C0BE00C0C3E4 /* JLABattleViewController.m in Sources */,
 				1B8C83CF2442B35200C0C3E4 /* APIController.swift in Sources */,
 				1B3932C0243F6306002DCDED /* AppDelegate.m in Sources */,

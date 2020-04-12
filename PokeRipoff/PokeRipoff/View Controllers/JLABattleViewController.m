@@ -9,6 +9,9 @@
 #import "JLABattleViewController.h"
 #import "PokeRipoff-Swift.h"
 #import "JLAPokemon.h"
+#import "JLAStatsViewController.h"
+
+NSString *MYGlobalVariable = @"Hello";
 
 @interface JLABattleViewController ()
 
@@ -25,7 +28,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dummyVIew.backgroundColor = [UIColor redColor];
+    NSLog(@"%@", MYGlobalVariable);
     
+    //[self fetchEnemy];
+}
+
+- (void)fetchEnemy {
     [[APIController sharedController] fetchRandomPokemonWithCompletion:^(JLAPokemon *result, NSError *error) {
         
         self.enemy = result;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eVH-tG-SdK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EBR-ei-Waj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Battle-->
         <scene sceneID="4vb-dJ-1AM">
             <objects>
-                <viewController id="Hfx-KR-SjW" sceneMemberID="viewController">
+                <viewController id="Hfx-KR-SjW" customClass="JLABattleViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fh3-Zw-CwI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,6 +79,53 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2hD-8x-u3h" userLabel="Moves View">
                                 <rect key="frame" x="0.0" y="502" width="414" height="448"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4B2-ic-wJb">
+                                        <rect key="frame" x="213" y="162" width="193" height="69"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Move 4"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVo-i8-9jm">
+                                        <rect key="frame" x="213" y="85" width="193" height="69"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Move 2"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9M-h3-51Y">
+                                        <rect key="frame" x="8" y="162" width="193" height="69"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Move 3"/>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="A wild NIDORINO appeared! What will GENGAR do?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tv7-zL-Bfc">
+                                        <rect key="frame" x="8" y="8" width="398" height="69"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeN-g1-KAA">
+                                        <rect key="frame" x="8" y="85" width="193" height="69"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Move 1"/>
+                                    </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LAl-49-HfY">
+                                        <rect key="frame" x="149" y="239" width="116" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
@@ -103,33 +150,75 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VaY-bX-65v"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dse-R3-IP3"/>
+                    <navigationItem key="navigationItem" title="Battle" id="dse-R3-IP3"/>
+                    <connections>
+                        <outlet property="dummyVIew" destination="LAl-49-HfY" id="hCW-fI-ith"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fIs-4k-zoN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="989.85507246376824" y="49.553571428571423"/>
+            <point key="canvasLocation" x="1869.5652173913045" y="49.553571428571423"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="gsF-m1-1Fs">
+        <!--Stats-->
+        <scene sceneID="Cd6-4T-n96">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eVH-tG-SdK" sceneMemberID="viewController">
+                <viewController id="NH3-X9-y1n" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cr9-RB-4M9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="hWW-bQ-A6a"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stats" image="sidebar.left" catalog="system" id="xq7-Bq-Il2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zZW-xI-YfG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1419" y="728"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ZbE-te-ZNm">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="EBR-ei-Waj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YDQ-5q-wRN">
+                    <navigationItem key="navigationItem" id="Tfp-Pt-bpY"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ag4-XB-JJu">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dUV-mN-pQw" kind="relationship" relationship="viewControllers" id="LO0-mT-W0i"/>
+                        <segue destination="NH3-X9-y1n" kind="relationship" relationship="viewControllers" id="ZaC-5S-dq6"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOe-7h-ulj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="361" y="50"/>
+        </scene>
+        <!--Battle-->
+        <scene sceneID="fHS-uh-BZi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dUV-mN-pQw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Battle" image="sportscourt.fill" catalog="system" id="B8U-d8-4nd"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kyS-b9-ilA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Hfx-KR-SjW" kind="relationship" relationship="rootViewController" id="fau-0s-QEF"/>
+                        <segue destination="Hfx-KR-SjW" kind="relationship" relationship="rootViewController" id="yGN-ib-ona"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rO9-SD-xfu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CDX-Z1-6EC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="79.710144927536234" y="49.553571428571423"/>
+            <point key="canvasLocation" x="1161" y="50"/>
         </scene>
     </scenes>
     <resources>
         <image name="gengar_back" width="96" height="96"/>
         <image name="nidorino_front" width="96" height="96"/>
+        <image name="sidebar.left" catalog="system" width="128" height="93"/>
+        <image name="sportscourt.fill" catalog="system" width="128" height="83"/>
     </resources>
 </document>

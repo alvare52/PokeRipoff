@@ -14,19 +14,22 @@
     
     if (self = [super init]) {
         
+        // name
         NSString *name = dictionary[@"name"];
         
+        // identifier
         NSNumber *identifier = dictionary[@"id"];
         
-        // { [{}] }
+        // sprite
         NSDictionary *sprites = dictionary[@"sprites"];
         NSString *spriteString = sprites[@"front_default"];
         NSURL *sprite = [NSURL URLWithString:spriteString];
         
+        // backSprite
         NSString *backSpriteString = sprites[@"back_default"];
         NSURL *backSprite = [NSURL URLWithString:backSpriteString];
     
-        // abilites [@"ability"] / ability @["name"]
+        // abilites
         NSMutableArray *abilitiesArray = [[NSMutableArray alloc] init];
         NSArray *abilitiesDictionary = dictionary[@"abilities"];
         for (NSDictionary *abilityDictionary in abilitiesDictionary) {
@@ -37,7 +40,7 @@
             [abilitiesArray addObject:abilityName];
         }
         
-        // abilites [@"ability"] / ability @["name"]
+        // moves
         NSMutableArray *movesArray = [[NSMutableArray alloc] init];
         NSArray *movesDictionary = dictionary[@"moves"];
         for (NSDictionary *moveDictionary in movesDictionary) {
@@ -48,12 +51,35 @@
             [movesArray addObject:moveURL];
         }
         
+        // stats (might need to change later because I'm assigning based on order, not stat.name)
+        NSMutableArray *statsArray = [[NSMutableArray alloc] init];
+        NSArray *statsDictionary = dictionary[@"stats"];
+        for (NSDictionary *statDictionary in statsDictionary) {
+            
+            NSNumber *statNumber = statDictionary[@"base_stat"];
+            
+            [statsArray addObject:statNumber];
+        }
+        
+        // types
+        NSMutableArray *typesArray = [[NSMutableArray alloc] init];
+        NSArray *typesDictionary = dictionary[@"types"];
+        for (NSDictionary *typeDictionary in typesDictionary) {
+            
+            NSDictionary *typeDict = typeDictionary[@"type"];
+            NSString *typeName = [typeDict[@"name"] capitalizedString];
+            
+            [typesArray addObject:typeName];
+        }
+        
         _name = name;
         _identifier = identifier;
         _sprite = sprite;
         _backSprite = backSprite;
         _abilities = abilitiesArray;
         _moves = movesArray;
+        _stats = statsArray;
+        _types = typesArray;
     }
     return self;
 }

@@ -42,6 +42,9 @@ import Foundation
                 print("pokemon.moves = \(randomPokemon.moves)")
                 print("pokemon.sprite = \(randomPokemon.sprite)")
                 print("pokemon.backSprite = \(randomPokemon.backSprite)")
+                print("pokemon.stats = \(randomPokemon.stats)")
+                print("pokemon.types = \(randomPokemon.types)")
+
                 completion(randomPokemon, nil) //
             } catch {
                 print("DECODE error: \(error)")

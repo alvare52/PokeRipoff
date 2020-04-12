@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSURL *backSprite;
 @property (nonatomic, copy) NSArray *abilities;
 @property (nonatomic, copy) NSArray *moves;
+@property (nonatomic, copy) NSArray *stats;
+@property (nonatomic, copy) NSArray *types;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

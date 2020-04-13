@@ -19,6 +19,9 @@ JLAPokemon *MYEnemyGlobal = nil;
 // MARK: - Outlets
 @property (strong, nonatomic) IBOutlet UIView *dummyVIew;
 
+@property (strong, nonatomic) IBOutlet UIImageView *enemyImageView;
+
+
 @property (nonatomic) JLAPokemon *enemy;
 @property (nonatomic) JLAPokemon *ally;
 
@@ -49,16 +52,35 @@ JLAPokemon *MYEnemyGlobal = nil;
     NSLog(@"%@", MYEnemyGlobal.stats);
     NSLog(@"%@", MYEnemyGlobal.types);
     
-    //[self fetchEnemy];
+    [self fetchEnemy];
 }
 
 - (void)fetchEnemy {
+    
+    NSLog(@"called fetchEnemy in battleVC");
+    
     [[APIController sharedController] fetchRandomPokemonWithCompletion:^(JLAPokemon *result, NSError *error) {
         
         self.enemy = result;
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"%@", self.enemy);
             //[self.tableView reloadData];
+            [self fetchEnemyImage];
+        });
+    }];
+}
+
+- (void)fetchEnemyImage {
+    
+    NSLog(@"called fetchEnemyImage in battleVC");
+    
+    [[APIController sharedController] fetchImageAt:self.enemy.sprite completion:^(UIImage *image) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"frontImage BEFORE = %@", MYEnemyGlobal.frontImage);
+            [MYEnemyGlobal setFrontImage:image];
+            self.enemyImageView.image = MYEnemyGlobal.frontImage;
+            NSLog(@"frontImage AFTER = %@", MYEnemyGlobal.frontImage);
+            NSLog(@"backImage = %@", MYEnemyGlobal.backImage);
         });
     }];
 }

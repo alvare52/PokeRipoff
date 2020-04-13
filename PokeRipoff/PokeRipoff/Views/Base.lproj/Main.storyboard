@@ -153,6 +153,7 @@
                     <navigationItem key="navigationItem" title="Battle" id="dse-R3-IP3"/>
                     <connections>
                         <outlet property="dummyVIew" destination="LAl-49-HfY" id="hCW-fI-ith"/>
+                        <outlet property="enemyImageView" destination="E8I-Oc-ooK" id="RG6-Yg-Lgs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fIs-4k-zoN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 @objc class APIController: NSObject {
 
     @objc (sharedController) static let shared = APIController()
 
-    //
+    /// Grabbing Gengar right now though
     @objc func fetchRandomPokemon(completion: @escaping (JLAPokemon?, Error?) -> Void) {
         
         let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/gengar")!
@@ -51,6 +52,32 @@ import Foundation
                 completion(nil, NSError())
                 return
             }
+        }.resume()
+    }
+    
+    // URL used to be String
+    @objc func fetchImage(at urlString: URL?, completion: @escaping (UIImage?) -> Void) {
+        
+        guard let url = urlString else {
+            completion(nil)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                NSLog("Error fetching image: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("No data returned from data task")
+                completion(nil)
+                return
+            }
+            
+            let image = UIImage(data: data)
+            
+            completion(image)
         }.resume()
     }
 

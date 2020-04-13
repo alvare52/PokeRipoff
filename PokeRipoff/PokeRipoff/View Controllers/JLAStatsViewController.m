@@ -8,6 +8,7 @@
 
 #import "JLAStatsViewController.h"
 #import "JLABattleViewController.h"
+#import "JLAPokemon.h"
 
 @interface JLAStatsViewController ()
 
@@ -18,6 +19,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"%@", MYGlobalVariable);
+
+    NSLog(@"%@", MYEnemyGlobal.name);
+    NSLog(@"%@", MYEnemyGlobal.identifier);
+    NSLog(@"%@", MYEnemyGlobal.sprite);
+    NSLog(@"%@", MYEnemyGlobal.backSprite);
+    NSLog(@"%@", MYEnemyGlobal.abilities);
+    NSLog(@"%@", MYEnemyGlobal.moves);
+    NSLog(@"%@", MYEnemyGlobal.stats);
+    NSLog(@"%@", MYEnemyGlobal.types);
+
 }
 
 /*

@@ -10,10 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class APIController;
+@class JLAPokemon;
+
 // Global variable
 extern NSString *MYGlobalVariable;
-
-@class APIController;
+extern JLAPokemon *MYEnemyGlobal;
 
 @interface JLABattleViewController : UIViewController
 

@@ -12,6 +12,7 @@
 #import "JLAStatsViewController.h"
 
 NSString *MYGlobalVariable = @"Hello";
+JLAPokemon *MYEnemyGlobal = nil;
 
 @interface JLABattleViewController ()
 
@@ -28,7 +29,25 @@ NSString *MYGlobalVariable = @"Hello";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dummyVIew.backgroundColor = [UIColor redColor];
+    JLAPokemon *testGlobal = [[JLAPokemon alloc] initWithName:@"Gengar"
+                                                   identifier:@94
+                                                       sprite:@"spriteURL"
+                                                   backSprite:@"backSpriteURL"
+                                                    abilities:@[@1]
+                                                        moves:@[@2]
+                                                        stats: @[@3]
+                                                        types:@[@4]];
+    MYEnemyGlobal = testGlobal;
     NSLog(@"%@", MYGlobalVariable);
+    
+    NSLog(@"%@", MYEnemyGlobal.name);
+    NSLog(@"%@", MYEnemyGlobal.identifier);
+    NSLog(@"%@", MYEnemyGlobal.sprite);
+    NSLog(@"%@", MYEnemyGlobal.backSprite);
+    NSLog(@"%@", MYEnemyGlobal.abilities);
+    NSLog(@"%@", MYEnemyGlobal.moves);
+    NSLog(@"%@", MYEnemyGlobal.stats);
+    NSLog(@"%@", MYEnemyGlobal.types);
     
     //[self fetchEnemy];
 }

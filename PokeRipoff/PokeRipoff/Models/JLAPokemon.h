@@ -21,6 +21,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSArray *stats;
 @property (nonatomic, copy) NSArray *types;
 
+- (instancetype)initWithName:(NSString *)name
+                  identifier:(NSNumber *)identifier
+                      sprite:(NSURL *)sprite
+                  backSprite:(NSURL *)backSprite
+                   abilities:(NSArray *)abilities
+                       moves:(NSArray *)moves
+                       stats:(NSArray *)stats
+                       types:(NSArray *)types;
+
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end

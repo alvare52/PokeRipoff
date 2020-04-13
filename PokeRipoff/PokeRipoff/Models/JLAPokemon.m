@@ -84,4 +84,26 @@
     return self;
 }
 
+- (instancetype)initWithName:(NSString *)name
+                  identifier:(NSNumber *)identifier
+                      sprite:(NSURL *)sprite
+                  backSprite:(NSURL *)backSprite
+                   abilities:(NSArray *)abilities
+                       moves:(NSArray *)moves
+                       stats:(NSArray *)stats
+                       types:(NSArray *)types {
+    
+    if (self = [super init]) {
+        _name = [name copy];
+        _identifier = identifier;
+        _sprite = [sprite copy];
+        _backSprite = [backSprite copy];
+        _abilities = [abilities copy];
+        _moves = [moves copy];
+        _stats = [stats copy];
+        _types = [types copy];
+    }
+    return self;
+}
+
 @end

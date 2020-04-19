@@ -12,11 +12,14 @@ import UIKit
 @objc class APIController: NSObject {
 
     @objc (sharedController) static let shared = APIController()
-
+    
     /// Grabbing Gengar right now though
     @objc func fetchRandomPokemon(completion: @escaping (JLAPokemon?, Error?) -> Void) {
         
-        let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/gengar")!
+        //
+        let randomID = Int.random(in: 1...150) // Genesect last one, new gens have no back sprite
+        print("randomID = \(randomID)")
+        let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/\(randomID)")!
                 
         URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
             

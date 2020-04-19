@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSNumber *identifier;
 @property (nonatomic, copy) NSURL *sprite;
-@property (nonatomic, copy) NSURL *backSprite;
+@property (nonatomic, copy, nullable) NSURL *backSprite;
 @property (nonatomic, copy) NSArray *abilities;
 @property (nonatomic, copy) NSArray *moves;
 @property (nonatomic, copy) NSArray *stats;

@@ -17,9 +17,8 @@ JLAPokemon *MYEnemyGlobal = nil;
 @interface JLABattleViewController ()
 
 // MARK: - Outlets
-@property (strong, nonatomic) IBOutlet UIView *dummyVIew;
-
 @property (strong, nonatomic) IBOutlet UIImageView *enemyImageView;
+- (IBAction)changeEnemy:(UIBarButtonItem *)sender;
 
 
 @property (nonatomic) JLAPokemon *enemy;
@@ -31,7 +30,6 @@ JLAPokemon *MYEnemyGlobal = nil;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dummyVIew.backgroundColor = [UIColor redColor];
     JLAPokemon *testGlobal = [[JLAPokemon alloc] initWithName:@"Gengar"
                                                    identifier:@94
                                                        sprite:@"spriteURL"
@@ -52,7 +50,7 @@ JLAPokemon *MYEnemyGlobal = nil;
     NSLog(@"%@", MYEnemyGlobal.stats);
     NSLog(@"%@", MYEnemyGlobal.types);
     
-    [self fetchEnemy];
+    //[self fetchEnemy];
 }
 
 - (void)fetchEnemy {
@@ -95,4 +93,9 @@ JLAPokemon *MYEnemyGlobal = nil;
 }
 */
 
+// MARK: - Actions
+
+- (IBAction)changeEnemy:(UIBarButtonItem *)sender {
+    [self fetchEnemy];
+}
 @end

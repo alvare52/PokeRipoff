@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 @objc class APIController: NSObject {
-
+    
     @objc (sharedController) static let shared = APIController()
     
     /// Grabbing Gengar right now though
@@ -18,7 +18,8 @@ import UIKit
         
         //
         let randomID = Int.random(in: 1...150) // Genesect last one, new gens have no back sprite
-        print("randomID = \(randomID)")
+        print("randomID = \(randomID)")                             // randomID
+        // TODO: take out Ditto, Celebi?, etc..
         let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/\(randomID)")!
                 
         URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
@@ -81,6 +82,42 @@ import UIKit
             let image = UIImage(data: data)
             
             completion(image)
+        }.resume()
+    }
+    
+    @objc func fetchMove(at urlString: URL?, completion: @escaping (JLAMove?) -> Void) {
+
+        // default value
+        let tackle = JLAMove(name: "Tackle", power: 40, accuracy: 100, damageClass: "physical", type: "normal")
+
+        guard let url = urlString else {
+            completion(tackle)
+            return
+        }
+
+        print("url = \(urlString)")
+
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                NSLog("Error fetching move: \(error)")
+                return
+            }
+
+            guard let data = data else {
+                NSLog("No data returned from data task")
+                completion(tackle)
+                return
+            }
+
+            do {
+                let dictionary = try JSONSerialization.jsonObject(with: data, options: [])
+                let move = JLAMove(dictionary: dictionary as! [AnyHashable : Any])
+                completion(move)
+            } catch {
+                print("DECODE error: \(error)")
+                completion(tackle)
+                return
+            }
         }.resume()
     }
 

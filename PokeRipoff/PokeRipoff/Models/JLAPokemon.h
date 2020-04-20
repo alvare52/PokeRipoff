@@ -11,6 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class JLAMove;
+
 @interface JLAPokemon : NSObject
 
 @property (nonatomic, copy) NSString *name;
@@ -23,6 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSArray *types;
 @property (nonatomic, nullable) UIImage *frontImage; // should both start as null
 @property (nonatomic, nullable) UIImage *backImage;
+@property (nonatomic) JLAMove *move1;
+@property (nonatomic, copy) JLAMove *move2;
+@property (nonatomic, copy) JLAMove *move3;
+@property (nonatomic, copy) JLAMove *move4;
 
 - (instancetype)initWithName:(NSString *)name
                   identifier:(NSNumber *)identifier

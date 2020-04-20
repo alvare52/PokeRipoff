@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class APIController;
 @class JLAPokemon;
+@class JLAMove;
 
 // Global variable
 extern NSString *MYGlobalVariable;

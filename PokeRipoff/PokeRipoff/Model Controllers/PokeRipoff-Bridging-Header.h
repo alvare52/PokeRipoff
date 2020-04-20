@@ -3,3 +3,4 @@
 //
 
 #import "JLAPokemon.h"
+#import "JLAMove.h"

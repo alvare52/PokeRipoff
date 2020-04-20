@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B102ABF244D56450095733B /* JLAMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B102ABE244D56450095733B /* JLAMove.m */; };
 		1B3932C0243F6306002DCDED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3932BF243F6306002DCDED /* AppDelegate.m */; };
 		1B3932C3243F6306002DCDED /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3932C2243F6306002DCDED /* SceneDelegate.m */; };
 		1B3932C9243F6306002DCDED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3932C7243F6306002DCDED /* Main.storyboard */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B102ABD244D56450095733B /* JLAMove.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLAMove.h; sourceTree = "<group>"; };
+		1B102ABE244D56450095733B /* JLAMove.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLAMove.m; sourceTree = "<group>"; };
 		1B3932BB243F6306002DCDED /* PokeRipoff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeRipoff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3932BE243F6306002DCDED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1B3932BF243F6306002DCDED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 			children = (
 				1B8C83D02442B3A500C0C3E4 /* JLAPokemon.h */,
 				1B8C83D12442B3A500C0C3E4 /* JLAPokemon.m */,
+				1B102ABD244D56450095733B /* JLAMove.h */,
+				1B102ABE244D56450095733B /* JLAMove.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 			files = (
 				1B8C83DE2443CC9A00C0C3E4 /* JLAStatsViewController.m in Sources */,
 				1B8C83D72442C0BE00C0C3E4 /* JLABattleViewController.m in Sources */,
+				1B102ABF244D56450095733B /* JLAMove.m in Sources */,
 				1B8C83CF2442B35200C0C3E4 /* APIController.swift in Sources */,
 				1B3932C0243F6306002DCDED /* AppDelegate.m in Sources */,
 				1B3932D1243F630E002DCDED /* main.m in Sources */,

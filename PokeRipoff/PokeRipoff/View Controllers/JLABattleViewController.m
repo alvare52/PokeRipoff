@@ -10,6 +10,7 @@
 #import "PokeRipoff-Swift.h"
 #import "JLAPokemon.h"
 #import "JLAStatsViewController.h"
+#import "JLAMove.h"
 
 NSString *MYGlobalVariable = @"Hello";
 JLAPokemon *MYEnemyGlobal = nil;
@@ -63,14 +64,34 @@ JLAPokemon *MYEnemyGlobal = nil;
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"%@", self.enemy);
             //[self.tableView reloadData];
+            [self setEnemyMoves];
             [self fetchEnemyImage];
         });
     }];
 }
 
+- (void)setEnemyMoves {
+    
+    NSLog(@"setEnemyMoves");
+    int random = arc4random_uniform(self.enemy.moves.count);
+    NSLog(@"called setEnemyMoves in battleVC, moves[0] = %@", self.enemy.moves[0]);
+    
+    [[APIController sharedController] fetchMoveAt:self.enemy.moves[0] completion:^(JLAMove *move) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.enemy.move1 = move;
+            NSLog(@"move1.name = %@", self.enemy.move1.name);
+            NSLog(@"move1.power = %@", self.enemy.move1.power);
+            NSLog(@"move1.accuracy = %@", self.enemy.move1.accuracy);
+            NSLog(@"move1.damageClass = %@", self.enemy.move1.damageClass);
+            NSLog(@"move1.type = %@", self.enemy.move1.type);
+        });
+    }];
+    
+}
+
 - (void)fetchEnemyImage {
     
-    NSLog(@"called fetchEnemyImage in battleVC");
+    NSLog(@"called fetchEnemyImage in battleVC, spriteURL = %@", self.enemy.sprite);
     
     [[APIController sharedController] fetchImageAt:self.enemy.sprite completion:^(UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{

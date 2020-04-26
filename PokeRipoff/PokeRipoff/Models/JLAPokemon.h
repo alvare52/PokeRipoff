@@ -26,9 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable) UIImage *frontImage; // should both start as null
 @property (nonatomic, nullable) UIImage *backImage;
 @property (nonatomic) JLAMove *move1;
-@property (nonatomic, copy) JLAMove *move2;
-@property (nonatomic, copy) JLAMove *move3;
-@property (nonatomic, copy) JLAMove *move4;
+@property (nonatomic) JLAMove *move2;
+@property (nonatomic) JLAMove *move3;
+@property (nonatomic) JLAMove *move4;
 
 - (instancetype)initWithName:(NSString *)name
                   identifier:(NSNumber *)identifier

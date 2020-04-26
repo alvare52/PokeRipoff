@@ -71,19 +71,106 @@ JLAPokemon *MYEnemyGlobal = nil;
 }
 
 - (void)setEnemyMoves {
-    
+    // TODO: make moveSet array in model to hold all of these?
     NSLog(@"setEnemyMoves");
-    int random = arc4random_uniform(self.enemy.moves.count);
-    NSLog(@"called setEnemyMoves in battleVC, moves[0] = %@", self.enemy.moves[0]);
+    NSLog(@"called setEnemyMoves in battleVC, moves.count = %lu", self.enemy.moves.count);
     
-    [[APIController sharedController] fetchMoveAt:self.enemy.moves[0] completion:^(JLAMove *move) {
+    // move1
+    int random1 = arc4random_uniform(self.enemy.moves.count);
+    [[APIController sharedController] fetchMoveAt:self.enemy.moves[random1] completion:^(JLAMove *move) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSLog(@"accuracy = %@", move.accuracy);
+            if (move.accuracy == NULL) {
+                move.accuracy = @100;
+                NSLog(@"accuracy NOW = %@", move.accuracy);
+            }
+            NSLog(@"power = %@", move.power);
+            if (move.power == NULL) {
+                move.power = @50;
+                NSLog(@"power = %@", move.power);
+            }
             self.enemy.move1 = move;
             NSLog(@"move1.name = %@", self.enemy.move1.name);
             NSLog(@"move1.power = %@", self.enemy.move1.power);
             NSLog(@"move1.accuracy = %@", self.enemy.move1.accuracy);
             NSLog(@"move1.damageClass = %@", self.enemy.move1.damageClass);
             NSLog(@"move1.type = %@", self.enemy.move1.type);
+        });
+    }];
+    
+    // move2
+    int random2 = arc4random_uniform(self.enemy.moves.count);
+    [[APIController sharedController] fetchMoveAt:self.enemy.moves[random2] completion:^(JLAMove *move) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSLog(@"accuracy = %@", move.accuracy);
+            if (move.accuracy == NULL) {
+                move.accuracy = @100;
+                NSLog(@"accuracy NOW = %@", move.accuracy);
+            }
+            NSLog(@"power = %@", move.power);
+            if (move.power == NULL) {
+                move.power = @50;
+                NSLog(@"power = %@", move.power);
+            }
+            
+            self.enemy.move2 = move;
+            NSLog(@"move2.name = %@", self.enemy.move2.name);
+            NSLog(@"move2.power = %@", self.enemy.move2.power);
+            NSLog(@"move2.accuracy = %@", self.enemy.move2.accuracy);
+            NSLog(@"move2.damageClass = %@", self.enemy.move2.damageClass);
+            NSLog(@"move2.type = %@", self.enemy.move2.type);
+        });
+    }];
+    
+    // move3
+    int random3 = arc4random_uniform(self.enemy.moves.count);
+    [[APIController sharedController] fetchMoveAt:self.enemy.moves[random3] completion:^(JLAMove *move) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSLog(@"accuracy = %@", move.accuracy);
+            if (move.accuracy == NULL) {
+                move.accuracy = @100;
+                NSLog(@"accuracy NOW = %@", move.accuracy);
+            }
+            NSLog(@"power = %@", move.power);
+            if (move.power == NULL) {
+                move.power = @50;
+                NSLog(@"power = %@", move.power);
+            }
+            
+            self.enemy.move3 = move;
+            NSLog(@"move3.name = %@", self.enemy.move3.name);
+            NSLog(@"move3.power = %@", self.enemy.move3.power);
+            NSLog(@"move3.accuracy = %@", self.enemy.move3.accuracy);
+            NSLog(@"move3.damageClass = %@", self.enemy.move3.damageClass);
+            NSLog(@"move3.type = %@", self.enemy.move3.type);
+        });
+    }];
+    
+    // move4
+    int random4 = arc4random_uniform(self.enemy.moves.count);
+    [[APIController sharedController] fetchMoveAt:self.enemy.moves[random4] completion:^(JLAMove *move) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSLog(@"accuracy = %@", move.accuracy);
+            if (move.accuracy == NULL) {
+                move.accuracy = @100;
+                NSLog(@"accuracy NOW = %@", move.accuracy);
+            }
+            NSLog(@"power = %@", move.power);
+            if (move.power == NULL) {
+                move.power = @50;
+                NSLog(@"power = %@", move.power);
+            }
+            
+            self.enemy.move4 = move;
+            NSLog(@"move4.name = %@", self.enemy.move4.name);
+            NSLog(@"move4.power = %@", self.enemy.move4.power);
+            NSLog(@"move4.accuracy = %@", self.enemy.move4.accuracy);
+            NSLog(@"move4.damageClass = %@", self.enemy.move4.damageClass);
+            NSLog(@"move4.type = %@", self.enemy.move4.type);
         });
     }];
     

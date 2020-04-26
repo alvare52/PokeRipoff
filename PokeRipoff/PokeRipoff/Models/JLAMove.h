@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSNumber *power;
 @property (nonatomic, copy) NSNumber *accuracy;
 @property (nonatomic, copy) NSString *damageClass;
-@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy, nullable) NSString *type; // TODO: attacks with unknown type?
 
 - (instancetype)initWithName:(NSString *)name
                        power:(NSNumber *)power

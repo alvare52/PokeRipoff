@@ -48,6 +48,19 @@
         NSDictionary *typeDictionary = dictionary[@"type"];
         NSString *type = typeDictionary[@"name"];
         
+        // TODO: if power/accuracy == NULL, then assign it a default of 50/100?
+        
+        // Moves with "no" accuracy because they always hit
+        if ([accuracy isKindOfClass:[NSNull class]]) {
+            NSLog(@" \n NULL accuracy \n");
+            accuracy = @100; // default of perfect accuracy
+        }
+        // Moves that have no set damage, so based on other stuff
+        if ([power isKindOfClass:[NSNull class]]) {
+            NSLog(@"\n NULL power \n");
+            power = @55; // default damage
+        }
+        
         _name = name;
         _power = power;
         _accuracy = accuracy;

@@ -49,6 +49,7 @@
             NSDictionary *moveDict = moveDictionary[@"move"];
             NSString *moveURL = moveDict[@"url"];
             
+            // FIXME: should not have duplicates
             NSURL *url = [NSURL URLWithString:moveURL];
             if ([self ignoreUrl:url.lastPathComponent]) {
                 NSLog(@"url to ignore: %@", moveURL);
@@ -79,7 +80,7 @@
             
             [typesArray addObject:typeName];
         }
-        
+    
         _name = name;
         _identifier = identifier;
         _sprite = sprite;
@@ -88,7 +89,6 @@
         _moves = movesArray;
         _stats = statsArray;
         _types = typesArray;
-        
     }
     return self;
 }

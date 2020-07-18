@@ -82,7 +82,10 @@ JLAPokemon *MYEnemyGlobal = nil;
 }
 
 - (void)setEnemyLabel {
-    self.enemyNameLabel.text = [self.enemy.name uppercaseString];
+//    NSInteger intValue = (NSInteger) roundf();
+    NSNumber *test = self.enemy.stats[0];
+    NSString *nameText = [[self.enemy.name uppercaseString] stringByAppendingFormat:@" - %.f", floor(test.floatValue * 4.6)];
+    self.enemyNameLabel.text = nameText;
 }
 
 - (void)setEnemyMoves {

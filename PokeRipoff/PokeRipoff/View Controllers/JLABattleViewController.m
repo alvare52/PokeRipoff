@@ -23,6 +23,13 @@ JLAPokemon *MYEnemyGlobal = nil;
 
 @property (strong, nonatomic) IBOutlet UILabel *enemyNameLabel;
 
+@property (strong, nonatomic) IBOutlet UIButton *move1ButtonLabel;
+
+@property (strong, nonatomic) IBOutlet UIButton *move2ButtonLabel;
+
+@property (strong, nonatomic) IBOutlet UIButton *move3ButtonLabel;
+
+@property (strong, nonatomic) IBOutlet UIButton *move4ButtonLabel;
 
 
 @property (nonatomic) JLAPokemon *enemy;
@@ -99,6 +106,9 @@ JLAPokemon *MYEnemyGlobal = nil;
                 NSLog(@"power = %@", move.power);
             }
             self.enemy.move1 = move;
+            
+            [self.move1ButtonLabel setTitle:[self.enemy.move1.name uppercaseString] forState: normal];
+            
             NSLog(@"move1.name = %@", self.enemy.move1.name);
             NSLog(@"move1.power = %@", self.enemy.move1.power);
             NSLog(@"move1.accuracy = %@", self.enemy.move1.accuracy);
@@ -124,6 +134,9 @@ JLAPokemon *MYEnemyGlobal = nil;
             }
             
             self.enemy.move2 = move;
+            
+            [self.move2ButtonLabel setTitle:[self.enemy.move2.name uppercaseString] forState: normal];
+
             NSLog(@"move2.name = %@", self.enemy.move2.name);
             NSLog(@"move2.power = %@", self.enemy.move2.power);
             NSLog(@"move2.accuracy = %@", self.enemy.move2.accuracy);
@@ -149,6 +162,9 @@ JLAPokemon *MYEnemyGlobal = nil;
             }
             
             self.enemy.move3 = move;
+            
+            [self.move3ButtonLabel setTitle:[self.enemy.move3.name uppercaseString] forState: normal];
+            
             NSLog(@"move3.name = %@", self.enemy.move3.name);
             NSLog(@"move3.power = %@", self.enemy.move3.power);
             NSLog(@"move3.accuracy = %@", self.enemy.move3.accuracy);
@@ -174,6 +190,9 @@ JLAPokemon *MYEnemyGlobal = nil;
             }
             
             self.enemy.move4 = move;
+            
+            [self.move4ButtonLabel setTitle:[self.enemy.move4.name uppercaseString] forState: normal];
+
             NSLog(@"move4.name = %@", self.enemy.move4.name);
             NSLog(@"move4.power = %@", self.enemy.move4.power);
             NSLog(@"move4.accuracy = %@", self.enemy.move4.accuracy);
@@ -214,4 +233,7 @@ JLAPokemon *MYEnemyGlobal = nil;
 - (IBAction)changeEnemy:(UIBarButtonItem *)sender {
     [self fetchEnemy];
 }
+
+
+
 @end

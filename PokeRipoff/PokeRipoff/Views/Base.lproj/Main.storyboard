@@ -210,6 +210,10 @@
                     <connections>
                         <outlet property="enemyImageView" destination="E8I-Oc-ooK" id="RG6-Yg-Lgs"/>
                         <outlet property="enemyNameLabel" destination="fiw-5N-CdN" id="DE9-VE-XQ3"/>
+                        <outlet property="move1ButtonLabel" destination="VeN-g1-KAA" id="AbS-u8-Qlk"/>
+                        <outlet property="move2ButtonLabel" destination="bVo-i8-9jm" id="nOI-Sl-52R"/>
+                        <outlet property="move3ButtonLabel" destination="e9M-h3-51Y" id="gpm-Ix-LyP"/>
+                        <outlet property="move4ButtonLabel" destination="4B2-ic-wJb" id="2RY-J2-9yy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fIs-4k-zoN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

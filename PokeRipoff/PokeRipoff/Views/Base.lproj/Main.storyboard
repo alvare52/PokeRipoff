@@ -209,6 +209,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="enemyImageView" destination="E8I-Oc-ooK" id="RG6-Yg-Lgs"/>
+                        <outlet property="enemyNameLabel" destination="fiw-5N-CdN" id="DE9-VE-XQ3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fIs-4k-zoN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

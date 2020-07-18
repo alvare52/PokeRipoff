@@ -21,6 +21,9 @@ JLAPokemon *MYEnemyGlobal = nil;
 @property (strong, nonatomic) IBOutlet UIImageView *enemyImageView;
 - (IBAction)changeEnemy:(UIBarButtonItem *)sender;
 
+@property (strong, nonatomic) IBOutlet UILabel *enemyNameLabel;
+
+
 
 @property (nonatomic) JLAPokemon *enemy;
 @property (nonatomic) JLAPokemon *ally;
@@ -64,10 +67,15 @@ JLAPokemon *MYEnemyGlobal = nil;
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"%@", self.enemy);
             //[self.tableView reloadData];
+            [self setEnemyLabel];
             [self setEnemyMoves];
             [self fetchEnemyImage];
         });
     }];
+}
+
+- (void)setEnemyLabel {
+    self.enemyNameLabel.text = [self.enemy.name uppercaseString];
 }
 
 - (void)setEnemyMoves {

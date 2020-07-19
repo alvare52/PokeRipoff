@@ -31,6 +31,7 @@ JLAPokemon *MYEnemyGlobal = nil;
 
 @property (strong, nonatomic) IBOutlet UIButton *move4ButtonLabel;
 
+@property (strong, nonatomic) IBOutlet UITextView *descriptionBoxLabel;
 
 @property (nonatomic) JLAPokemon *enemy;
 @property (nonatomic) JLAPokemon *ally;
@@ -85,9 +86,17 @@ JLAPokemon *MYEnemyGlobal = nil;
 
 - (void)setEnemyLabel {
 //    NSInteger intValue = (NSInteger) roundf();
-    NSNumber *test = self.enemy.stats[0];
-    NSString *nameText = [[self.enemy.name uppercaseString] stringByAppendingFormat:@" - %.f", floor(test.floatValue * 4.6)];
+    NSNumber *hp = self.enemy.stats[0];
+    NSString *descriptionBox = [NSString stringWithFormat:@"HP - %@, ATK - %@, DEF - %@, SPA - %@, SPD - %@, SPE - %@",
+                                self.enemy.stats[0],
+                                self.enemy.stats[1],
+                                self.enemy.stats[2],
+                                self.enemy.stats[3],
+                                self.enemy.stats[4],
+                                self.enemy.stats[5]];
+    NSString *nameText = [[self.enemy.name uppercaseString] stringByAppendingFormat:@" - %.f", floor(hp.floatValue * 4.6)];
     self.enemyNameLabel.text = nameText;
+    self.descriptionBoxLabel.text = descriptionBox;
 }
 
 - (void)setEnemyMoves {

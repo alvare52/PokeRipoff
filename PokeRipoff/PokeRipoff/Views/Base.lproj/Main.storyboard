@@ -86,7 +86,7 @@
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="A wild NIDORINO appeared! What will GENGAR do?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tv7-zL-Bfc" userLabel="Description Box">
                                         <rect key="frame" x="8" y="0.0" width="398" height="70"/>
-                                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -208,6 +208,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="descriptionBoxLabel" destination="tv7-zL-Bfc" id="Ecq-oQ-l9B"/>
                         <outlet property="enemyImageView" destination="E8I-Oc-ooK" id="RG6-Yg-Lgs"/>
                         <outlet property="enemyNameLabel" destination="fiw-5N-CdN" id="DE9-VE-XQ3"/>
                         <outlet property="move1ButtonLabel" destination="VeN-g1-KAA" id="AbS-u8-Qlk"/>

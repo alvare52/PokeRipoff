@@ -52,14 +52,14 @@ JLAPokemon *MYEnemyGlobal = nil;
     MYEnemyGlobal = testGlobal;
     NSLog(@"%@", MYGlobalVariable);
     
-    NSLog(@"%@", MYEnemyGlobal.name);
-    NSLog(@"%@", MYEnemyGlobal.identifier);
-    NSLog(@"%@", MYEnemyGlobal.sprite);
-    NSLog(@"%@", MYEnemyGlobal.backSprite);
-    NSLog(@"%@", MYEnemyGlobal.abilities);
-    NSLog(@"%@", MYEnemyGlobal.moves);
-    NSLog(@"%@", MYEnemyGlobal.stats);
-    NSLog(@"%@", MYEnemyGlobal.types);
+//    NSLog(@"%@", MYEnemyGlobal.name);
+//    NSLog(@"%@", MYEnemyGlobal.identifier);
+//    NSLog(@"%@", MYEnemyGlobal.sprite);
+//    NSLog(@"%@", MYEnemyGlobal.backSprite);
+//    NSLog(@"%@", MYEnemyGlobal.abilities);
+//    NSLog(@"%@", MYEnemyGlobal.moves);
+//    NSLog(@"%@", MYEnemyGlobal.stats);
+//    NSLog(@"%@", MYEnemyGlobal.types);
     
     //[self fetchEnemy];
 }
@@ -68,11 +68,13 @@ JLAPokemon *MYEnemyGlobal = nil;
     
     NSLog(@"called fetchEnemy in battleVC");
     
+    // TODO: Disable buttons here, then enable again when all are ready
+    
     [[APIController sharedController] fetchRandomPokemonWithCompletion:^(JLAPokemon *result, NSError *error) {
         
         self.enemy = result;
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"%@", self.enemy);
+//            NSLog(@"%@", self.enemy);
             //[self.tableView reloadData];
             [self setEnemyLabel];
             [self setEnemyMoves];
@@ -98,25 +100,25 @@ JLAPokemon *MYEnemyGlobal = nil;
     [[APIController sharedController] fetchMoveAt:self.enemy.moves[random1] completion:^(JLAMove *move) {
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            NSLog(@"accuracy = %@", move.accuracy);
-            if (move.accuracy == NULL) {
-                move.accuracy = @100;
-                NSLog(@"accuracy NOW = %@", move.accuracy);
-            }
-            NSLog(@"power = %@", move.power);
-            if (move.power == NULL) {
-                move.power = @50;
-                NSLog(@"power = %@", move.power);
-            }
+//            NSLog(@"accuracy = %@", move.accuracy);
+//            if (move.accuracy == NULL) {
+//                move.accuracy = @100;
+//                NSLog(@"accuracy NOW = %@", move.accuracy);
+//            }
+//            NSLog(@"power = %@", move.power);
+//            if (move.power == NULL) {
+//                move.power = @50;
+//                NSLog(@"power = %@", move.power);
+//            }
             self.enemy.move1 = move;
             
             [self.move1ButtonLabel setTitle:[self.enemy.move1.name uppercaseString] forState: normal];
             
-            NSLog(@"move1.name = %@", self.enemy.move1.name);
-            NSLog(@"move1.power = %@", self.enemy.move1.power);
-            NSLog(@"move1.accuracy = %@", self.enemy.move1.accuracy);
-            NSLog(@"move1.damageClass = %@", self.enemy.move1.damageClass);
-            NSLog(@"move1.type = %@", self.enemy.move1.type);
+//            NSLog(@"move1.name = %@", self.enemy.move1.name);
+//            NSLog(@"move1.power = %@", self.enemy.move1.power);
+//            NSLog(@"move1.accuracy = %@", self.enemy.move1.accuracy);
+//            NSLog(@"move1.damageClass = %@", self.enemy.move1.damageClass);
+//            NSLog(@"move1.type = %@", self.enemy.move1.type);
         });
     }];
     
@@ -125,26 +127,26 @@ JLAPokemon *MYEnemyGlobal = nil;
     [[APIController sharedController] fetchMoveAt:self.enemy.moves[random2] completion:^(JLAMove *move) {
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            NSLog(@"accuracy = %@", move.accuracy);
-            if (move.accuracy == NULL) {
-                move.accuracy = @100;
-                NSLog(@"accuracy NOW = %@", move.accuracy);
-            }
-            NSLog(@"power = %@", move.power);
-            if (move.power == NULL) {
-                move.power = @50;
-                NSLog(@"power = %@", move.power);
-            }
+//            NSLog(@"accuracy = %@", move.accuracy);
+//            if (move.accuracy == NULL) {
+//                move.accuracy = @100;
+//                NSLog(@"accuracy NOW = %@", move.accuracy);
+//            }
+//            NSLog(@"power = %@", move.power);
+//            if (move.power == NULL) {
+//                move.power = @50;
+//                NSLog(@"power = %@", move.power);
+//            }
             
             self.enemy.move2 = move;
             
             [self.move2ButtonLabel setTitle:[self.enemy.move2.name uppercaseString] forState: normal];
 
-            NSLog(@"move2.name = %@", self.enemy.move2.name);
-            NSLog(@"move2.power = %@", self.enemy.move2.power);
-            NSLog(@"move2.accuracy = %@", self.enemy.move2.accuracy);
-            NSLog(@"move2.damageClass = %@", self.enemy.move2.damageClass);
-            NSLog(@"move2.type = %@", self.enemy.move2.type);
+//            NSLog(@"move2.name = %@", self.enemy.move2.name);
+//            NSLog(@"move2.power = %@", self.enemy.move2.power);
+//            NSLog(@"move2.accuracy = %@", self.enemy.move2.accuracy);
+//            NSLog(@"move2.damageClass = %@", self.enemy.move2.damageClass);
+//            NSLog(@"move2.type = %@", self.enemy.move2.type);
         });
     }];
     
@@ -153,26 +155,26 @@ JLAPokemon *MYEnemyGlobal = nil;
     [[APIController sharedController] fetchMoveAt:self.enemy.moves[random3] completion:^(JLAMove *move) {
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            NSLog(@"accuracy = %@", move.accuracy);
-            if (move.accuracy == NULL) {
-                move.accuracy = @100;
-                NSLog(@"accuracy NOW = %@", move.accuracy);
-            }
-            NSLog(@"power = %@", move.power);
-            if (move.power == NULL) {
-                move.power = @50;
-                NSLog(@"power = %@", move.power);
-            }
+//            NSLog(@"accuracy = %@", move.accuracy);
+//            if (move.accuracy == NULL) {
+//                move.accuracy = @100;
+//                NSLog(@"accuracy NOW = %@", move.accuracy);
+//            }
+//            NSLog(@"power = %@", move.power);
+//            if (move.power == NULL) {
+//                move.power = @50;
+//                NSLog(@"power = %@", move.power);
+//            }
             
             self.enemy.move3 = move;
             
             [self.move3ButtonLabel setTitle:[self.enemy.move3.name uppercaseString] forState: normal];
             
-            NSLog(@"move3.name = %@", self.enemy.move3.name);
-            NSLog(@"move3.power = %@", self.enemy.move3.power);
-            NSLog(@"move3.accuracy = %@", self.enemy.move3.accuracy);
-            NSLog(@"move3.damageClass = %@", self.enemy.move3.damageClass);
-            NSLog(@"move3.type = %@", self.enemy.move3.type);
+//            NSLog(@"move3.name = %@", self.enemy.move3.name);
+//            NSLog(@"move3.power = %@", self.enemy.move3.power);
+//            NSLog(@"move3.accuracy = %@", self.enemy.move3.accuracy);
+//            NSLog(@"move3.damageClass = %@", self.enemy.move3.damageClass);
+//            NSLog(@"move3.type = %@", self.enemy.move3.type);
         });
     }];
     
@@ -181,26 +183,26 @@ JLAPokemon *MYEnemyGlobal = nil;
     [[APIController sharedController] fetchMoveAt:self.enemy.moves[random4] completion:^(JLAMove *move) {
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            NSLog(@"accuracy = %@", move.accuracy);
-            if (move.accuracy == NULL) {
-                move.accuracy = @100;
-                NSLog(@"accuracy NOW = %@", move.accuracy);
-            }
-            NSLog(@"power = %@", move.power);
-            if (move.power == NULL) {
-                move.power = @50;
-                NSLog(@"power = %@", move.power);
-            }
+//            NSLog(@"accuracy = %@", move.accuracy);
+//            if (move.accuracy == NULL) {
+//                move.accuracy = @100;
+//                NSLog(@"accuracy NOW = %@", move.accuracy);
+//            }
+//            NSLog(@"power = %@", move.power);
+//            if (move.power == NULL) {
+//                move.power = @50;
+//                NSLog(@"power = %@", move.power);
+//            }
             
             self.enemy.move4 = move;
             
             [self.move4ButtonLabel setTitle:[self.enemy.move4.name uppercaseString] forState: normal];
 
-            NSLog(@"move4.name = %@", self.enemy.move4.name);
-            NSLog(@"move4.power = %@", self.enemy.move4.power);
-            NSLog(@"move4.accuracy = %@", self.enemy.move4.accuracy);
-            NSLog(@"move4.damageClass = %@", self.enemy.move4.damageClass);
-            NSLog(@"move4.type = %@", self.enemy.move4.type);
+//            NSLog(@"move4.name = %@", self.enemy.move4.name);
+//            NSLog(@"move4.power = %@", self.enemy.move4.power);
+//            NSLog(@"move4.accuracy = %@", self.enemy.move4.accuracy);
+//            NSLog(@"move4.damageClass = %@", self.enemy.move4.damageClass);
+//            NSLog(@"move4.type = %@", self.enemy.move4.type);
         });
     }];
     

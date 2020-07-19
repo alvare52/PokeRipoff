@@ -52,7 +52,7 @@
             // FIXME: should not have duplicates
             NSURL *url = [NSURL URLWithString:moveURL];
             if ([self ignoreUrl:url.lastPathComponent]) {
-                NSLog(@"url to ignore: %@", moveURL);
+//                NSLog(@"url to ignore: %@", moveURL);
                 continue;
             }
             

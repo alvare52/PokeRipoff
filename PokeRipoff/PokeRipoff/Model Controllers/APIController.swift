@@ -42,13 +42,13 @@ import UIKit
                 //let pokemonResults = dictionary["results"]
                 //print(dictionary)
                 let randomPokemon = JLAPokemon(dictionary: dictionary as! [AnyHashable : Any])
-                print("pokemon.name = \(randomPokemon.name)")
-                print("pokemon.identifier = \(randomPokemon.identifier)")
-                print("pokemon.moves = \(randomPokemon.moves)")
-                print("pokemon.sprite = \(randomPokemon.sprite)")
-                print("pokemon.backSprite = \(randomPokemon.backSprite)")
-                print("pokemon.stats = \(randomPokemon.stats)")
-                print("pokemon.types = \(randomPokemon.types)")
+//                print("pokemon.name = \(randomPokemon.name)")
+//                print("pokemon.identifier = \(randomPokemon.identifier)")
+//                print("pokemon.moves = \(randomPokemon.moves)")
+//                print("pokemon.sprite = \(randomPokemon.sprite)")
+//                print("pokemon.backSprite = \(randomPokemon.backSprite)")
+//                print("pokemon.stats = \(randomPokemon.stats)")
+//                print("pokemon.types = \(randomPokemon.types)")
 
                 completion(randomPokemon, nil) //
             } catch {

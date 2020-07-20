@@ -19,9 +19,15 @@ JLAPokemon *MYEnemyGlobal = nil;
 
 // MARK: - Outlets
 @property (strong, nonatomic) IBOutlet UIImageView *enemyImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *allyImageView;
+
 - (IBAction)changeEnemy:(UIBarButtonItem *)sender;
 
 @property (strong, nonatomic) IBOutlet UILabel *enemyNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *allyNameLabel;
+
+@property (strong, nonatomic) IBOutlet UIProgressView *enemyHpProgressView;
+@property (strong, nonatomic) IBOutlet UIProgressView *allyHpProgressView;
 
 @property (strong, nonatomic) IBOutlet UIButton *move1ButtonLabel;
 
@@ -32,6 +38,8 @@ JLAPokemon *MYEnemyGlobal = nil;
 @property (strong, nonatomic) IBOutlet UIButton *move4ButtonLabel;
 
 @property (strong, nonatomic) IBOutlet UITextView *descriptionBoxLabel;
+
+- (IBAction)healButtonTapped:(UIButton *)sender;
 
 @property (nonatomic) JLAPokemon *enemy;
 @property (nonatomic) JLAPokemon *ally;
@@ -84,18 +92,52 @@ JLAPokemon *MYEnemyGlobal = nil;
     }];
 }
 
+- (void)fetchAlly {
+    
+    NSLog(@"called fetchAlly in battleVC");
+    
+    // TODO: Disable buttons here, then enable again when all are ready
+    
+    [[APIController sharedController] fetchRandomPokemonWithCompletion:^(JLAPokemon *result, NSError *error) {
+        
+        self.ally = result;
+        dispatch_async(dispatch_get_main_queue(), ^{
+//            NSLog(@"%@", self.enemy);
+            //[self.tableView reloadData];
+            [self setEnemyLabel];
+            [self setEnemyMoves];
+            [self fetchEnemyImage];
+        });
+    }];
+}
+
 - (void)setEnemyLabel {
 //    NSInteger intValue = (NSInteger) roundf();
     NSNumber *hp = self.enemy.stats[0];
-    NSString *descriptionBox = [NSString stringWithFormat:@"HP - %@, ATK - %@, DEF - %@, SPA - %@, SPD - %@, SPE - %@",
-                                self.enemy.stats[0],
-                                self.enemy.stats[1],
-                                self.enemy.stats[2],
-                                self.enemy.stats[3],
-                                self.enemy.stats[4],
-                                self.enemy.stats[5]];
+//    NSString *descriptionBox = [NSString stringWithFormat:@"HP - %@, ATK - %@, DEF - %@, SPA - %@, SPD - %@, SPE - %@",
+//                                self.enemy.stats[0],
+//                                self.enemy.stats[1],
+//                                self.enemy.stats[2],
+//                                self.enemy.stats[3],
+//                                self.enemy.stats[4],
+//                                self.enemy.stats[5]];
     NSString *nameText = [[self.enemy.name uppercaseString] stringByAppendingFormat:@" - %.f", floor(hp.floatValue * 4.6)];
     self.enemyNameLabel.text = nameText;
+//    self.descriptionBoxLabel.text = descriptionBox;
+}
+
+- (void)setAllyLabel {
+//    NSInteger intValue = (NSInteger) roundf();
+    NSNumber *hp = self.ally.stats[0];
+    NSString *descriptionBox = [NSString stringWithFormat:@"HP - %@, ATK - %@, DEF - %@, SPA - %@, SPD - %@, SPE - %@",
+                                self.ally.stats[0],
+                                self.ally.stats[1],
+                                self.ally.stats[2],
+                                self.ally.stats[3],
+                                self.ally.stats[4],
+                                self.ally.stats[5]];
+    NSString *nameText = [[self.ally.name uppercaseString] stringByAppendingFormat:@" - %.f", floor(hp.floatValue * 4.6)];
+    self.allyNameLabel.text = nameText;
     self.descriptionBoxLabel.text = descriptionBox;
 }
 
@@ -249,5 +291,10 @@ JLAPokemon *MYEnemyGlobal = nil;
 }
 
 
+
+- (IBAction)healButtonTapped:(UIButton *)sender {
+    NSLog(@"Heal button tapped");
+    self.enemyHpProgressView.progress = 1.0;
+}
 
 @end

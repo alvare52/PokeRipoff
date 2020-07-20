@@ -110,6 +110,9 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <state key="normal" title="Heal "/>
+                                        <connections>
+                                            <action selector="healButtonTapped:" destination="Hfx-KR-SjW" eventType="touchUpInside" id="Nai-vM-Njr"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Kc-L7-VSj">
                                         <rect key="frame" x="284" y="231" width="122" height="69"/>
@@ -208,7 +211,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="allyHpProgressView" destination="TY4-V5-n0C" id="e7H-J4-47Y"/>
+                        <outlet property="allyImageView" destination="Wr1-6B-YSH" id="UZk-YV-jZU"/>
+                        <outlet property="allyNameLabel" destination="4C3-UD-hif" id="5WQ-0U-n4O"/>
                         <outlet property="descriptionBoxLabel" destination="tv7-zL-Bfc" id="Ecq-oQ-l9B"/>
+                        <outlet property="enemyHpProgressView" destination="GDj-jM-hTz" id="dtj-Zy-755"/>
                         <outlet property="enemyImageView" destination="E8I-Oc-ooK" id="RG6-Yg-Lgs"/>
                         <outlet property="enemyNameLabel" destination="fiw-5N-CdN" id="DE9-VE-XQ3"/>
                         <outlet property="move1ButtonLabel" destination="VeN-g1-KAA" id="AbS-u8-Qlk"/>

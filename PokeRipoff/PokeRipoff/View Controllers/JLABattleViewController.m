@@ -14,6 +14,7 @@
 
 NSString *MYGlobalVariable = @"Hello";
 JLAPokemon *MYEnemyGlobal = nil;
+JLAPokemon *MYAllyGlobal = nil;
 
 @interface JLABattleViewController ()
 
@@ -59,6 +60,8 @@ JLAPokemon *MYEnemyGlobal = nil;
                                                         stats: @[@3]
                                                         types:@[@4]];
     MYEnemyGlobal = testGlobal;
+    MYAllyGlobal = testGlobal;
+    
     NSLog(@"%@", MYGlobalVariable);
     
 //    NSLog(@"%@", MYEnemyGlobal.name);
@@ -104,9 +107,34 @@ JLAPokemon *MYEnemyGlobal = nil;
         dispatch_async(dispatch_get_main_queue(), ^{
 //            NSLog(@"%@", self.enemy);
             //[self.tableView reloadData];
-            [self setEnemyLabel];
-            [self setEnemyMoves];
-            [self fetchEnemyImage];
+            [self setAllyLabel];
+//            [self setEnemyMoves];
+            [self fetchAllyImage];
+        });
+    }];
+}
+
+- (void)fetchAllyImage {
+    
+    NSLog(@"called fetchAllyImage in battleVC, spriteURL = %@", self.ally.sprite);
+
+    // Check if below gen 5 (these have backSprites)
+    NSURL *urlToFetch = nil;
+    if (self.ally.identifier.intValue > 493) {
+        NSLog(@"Newer Gen, using front sprite");
+        // TODO: Flip image horizontally
+        urlToFetch = self.ally.sprite;
+    } else {
+        urlToFetch = self.ally.backSprite;
+    }
+    
+    [[APIController sharedController] fetchImageAt:urlToFetch completion:^(UIImage *image) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+//            NSLog(@"frontImage BEFORE = %@", MYEnemyGlobal.frontImage);
+//            [MYEnemyGlobal setFrontImage:image];
+            self.allyImageView.image = image;
+//            NSLog(@"frontImage AFTER = %@", MYEnemyGlobal.frontImage);
+//            NSLog(@"backImage = %@", MYEnemyGlobal.backImage);
         });
     }];
 }
@@ -288,6 +316,8 @@ JLAPokemon *MYEnemyGlobal = nil;
 
 - (IBAction)changeEnemy:(UIBarButtonItem *)sender {
     [self fetchEnemy];
+    // NEW
+    [self fetchAlly];
 }
 
 

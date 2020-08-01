@@ -178,21 +178,13 @@ JLAPokemon *MYAllyGlobal = nil;
     int random1 = arc4random_uniform(self.ally.moves.count);
     [[APIController sharedController] fetchMoveAt:self.ally.moves[random1] completion:^(JLAMove *move) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            
-//            NSLog(@"accuracy = %@", move.accuracy);
-//            if (move.accuracy == NULL) {
-//                move.accuracy = @100;
-//                NSLog(@"accuracy NOW = %@", move.accuracy);
-//            }
-//            NSLog(@"power = %@", move.power);
-//            if (move.power == NULL) {
-//                move.power = @50;
-//                NSLog(@"power = %@", move.power);
-//            }
+    
             self.ally.move1 = move;
             
-            [self.move1ButtonLabel setTitle:[self.ally.move1.name uppercaseString] forState: normal];
-            
+//            [self.move1ButtonLabel setTitle:[self.ally.move1.name uppercaseString] forState: normal];
+            NSString *moveName = [self.ally.move1.name uppercaseString];
+            NSString *detailed = [NSString stringWithFormat:@"%@ - %@", moveName, self.ally.move1.power];
+            [self.move1ButtonLabel setTitle: detailed forState: normal];
 //            NSLog(@"move1.name = %@", self.enemy.move1.name);
 //            NSLog(@"move1.power = %@", self.enemy.move1.power);
 //            NSLog(@"move1.accuracy = %@", self.enemy.move1.accuracy);
@@ -207,20 +199,11 @@ JLAPokemon *MYAllyGlobal = nil;
     [[APIController sharedController] fetchMoveAt:self.ally.moves[random2] completion:^(JLAMove *move) {
         dispatch_async(dispatch_get_main_queue(), ^{
             
-//            NSLog(@"accuracy = %@", move.accuracy);
-//            if (move.accuracy == NULL) {
-//                move.accuracy = @100;
-//                NSLog(@"accuracy NOW = %@", move.accuracy);
-//            }
-//            NSLog(@"power = %@", move.power);
-//            if (move.power == NULL) {
-//                move.power = @50;
-//                NSLog(@"power = %@", move.power);
-//            }
-            
             self.ally.move2 = move;
             
-            [self.move2ButtonLabel setTitle:[self.ally.move2.name uppercaseString] forState: normal];
+            NSString *moveName = [self.ally.move2.name uppercaseString];
+            NSString *detailed = [NSString stringWithFormat:@"%@ - %@", moveName, self.ally.move2.power];
+            [self.move2ButtonLabel setTitle: detailed forState: normal];
 
 //            NSLog(@"move2.name = %@", self.enemy.move2.name);
 //            NSLog(@"move2.power = %@", self.enemy.move2.power);
@@ -235,21 +218,11 @@ JLAPokemon *MYAllyGlobal = nil;
     [[APIController sharedController] fetchMoveAt:self.ally.moves[random3] completion:^(JLAMove *move) {
         dispatch_async(dispatch_get_main_queue(), ^{
             
-//            NSLog(@"accuracy = %@", move.accuracy);
-//            if (move.accuracy == NULL) {
-//                move.accuracy = @100;
-//                NSLog(@"accuracy NOW = %@", move.accuracy);
-//            }
-//            NSLog(@"power = %@", move.power);
-//            if (move.power == NULL) {
-//                move.power = @50;
-//                NSLog(@"power = %@", move.power);
-//            }
-            
             self.ally.move3 = move;
             
-            [self.move3ButtonLabel setTitle:[self.ally.move3.name uppercaseString] forState: normal];
-            
+            NSString *moveName = [self.ally.move3.name uppercaseString];
+            NSString *detailed = [NSString stringWithFormat:@"%@ - %@", moveName, self.ally.move3.power];
+            [self.move3ButtonLabel setTitle: detailed forState: normal];
 //            NSLog(@"move3.name = %@", self.enemy.move3.name);
 //            NSLog(@"move3.power = %@", self.enemy.move3.power);
 //            NSLog(@"move3.accuracy = %@", self.enemy.move3.accuracy);
@@ -263,21 +236,11 @@ JLAPokemon *MYAllyGlobal = nil;
     [[APIController sharedController] fetchMoveAt:self.ally.moves[random4] completion:^(JLAMove *move) {
         dispatch_async(dispatch_get_main_queue(), ^{
             
-//            NSLog(@"accuracy = %@", move.accuracy);
-//            if (move.accuracy == NULL) {
-//                move.accuracy = @100;
-//                NSLog(@"accuracy NOW = %@", move.accuracy);
-//            }
-//            NSLog(@"power = %@", move.power);
-//            if (move.power == NULL) {
-//                move.power = @50;
-//                NSLog(@"power = %@", move.power);
-//            }
-            
             self.ally.move4 = move;
             
-            [self.move4ButtonLabel setTitle:[self.ally.move4.name uppercaseString] forState: normal];
-
+            NSString *moveName = [self.ally.move4.name uppercaseString];
+            NSString *detailed = [NSString stringWithFormat:@"%@ - %@", moveName, self.ally.move4.power];
+            [self.move4ButtonLabel setTitle: detailed forState: normal];
 //            NSLog(@"move4.name = %@", self.enemy.move4.name);
 //            NSLog(@"move4.power = %@", self.enemy.move4.power);
 //            NSLog(@"move4.accuracy = %@", self.enemy.move4.accuracy);

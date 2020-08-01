@@ -157,13 +157,18 @@ JLAPokemon *MYAllyGlobal = nil;
 - (void)setAllyLabel {
 //    NSInteger intValue = (NSInteger) roundf();
     NSNumber *hp = self.ally.stats[0];
-    NSString *descriptionBox = [NSString stringWithFormat:@"HP - %@, ATK - %@, DEF - %@, SPA - %@, SPD - %@, SPE - %@",
+    NSString *types = self.ally.types[0];
+    if (self.ally.types.count == 2) {
+        types = [NSString stringWithFormat:@"%@/%@", types, self.ally.types[1]];
+    }
+    NSString *descriptionBox = [NSString stringWithFormat:@"HP - %@, ATK - %@, DEF - %@, SPA - %@, SPD - %@, SPE - %@. - %@",
                                 self.ally.stats[0],
                                 self.ally.stats[1],
                                 self.ally.stats[2],
                                 self.ally.stats[3],
                                 self.ally.stats[4],
-                                self.ally.stats[5]];
+                                self.ally.stats[5],
+                                types];
     NSString *nameText = [[self.ally.name uppercaseString] stringByAppendingFormat:@" - %.f", floor(hp.floatValue * 4.6)];
     self.allyNameLabel.text = nameText;
     self.descriptionBoxLabel.text = descriptionBox;

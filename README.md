@@ -1,4 +1,4 @@
 # PokeRipoff
 Unit 4 Build Week
 
-![](screenshot.png)
+![](screenshot.png =100x20)

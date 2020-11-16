@@ -1,4 +1,4 @@
 # PokeRipoff
 Unit 4 Build Week
 
-![](screenshot.png =100x20)
+<img src="screenshot.png" height="100" width="20"/>

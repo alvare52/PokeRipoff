@@ -63,7 +63,8 @@ JLAPokemon *MYAllyGlobal = nil;
     MYAllyGlobal = testGlobal;
     
     NSLog(@"%@", MYGlobalVariable);
-    
+    [[self.descriptionBoxLabel layer] setBorderColor:[[UIColor blackColor] CGColor]];
+    [[self.descriptionBoxLabel layer] setBorderWidth:1.0];
 //    NSLog(@"%@", MYEnemyGlobal.name);
 //    NSLog(@"%@", MYEnemyGlobal.identifier);
 //    NSLog(@"%@", MYEnemyGlobal.sprite);
